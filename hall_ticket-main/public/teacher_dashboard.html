@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="/teacher_dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Teacher Dashboard</h1>
+        </header>
+        <main>
+            <section id="file-upload-section" class="dashboard-section">
+                <h2>Upload File</h2>
+                <form action="/upload-file" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file-upload">Choose file to upload:</label>
+                        <input type="file" id="file-upload" name="file" required>
+                    </div>
+                    <button type="submit" class="btn">Upload File</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Teacher Dashboard. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall Ticket</title>
+    <link rel="stylesheet" href="/hall_ticket.css">
+</head>
+<body>
+    <div class="hall-ticket-container">
+        <header>
+            <h1>Hall Ticket</h1>
+        </header>
+        <main>
+            <section class="hall-ticket-section">
+                <h2>Student Information</h2>
+                <p>Name: John Doe</p>
+                <p>Student ID: 123456</p>
+            </section>
+            <section class="hall-ticket-section">
+                <h2>Subject Eligibility</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mathematics</td>
+                            <td id="math-status"></td>
+                        </tr>
+                        <tr>
+                            <td>Science</td>
+                            <td id="science-status"></td>
+                        </tr>
+                        <!-- Add more subjects as needed -->
+                    </tbody>
+                </table>
+            </section>
+            <button onclick="downloadHallTicket()">Download Hall Ticket</button>
+        </main>
+        <footer>
+            <p>&copy; 2024 Hall Ticket. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        function loadEligibilityStatus() {
+            var approved = getParameterByName('approved');
+            var status = approved === 'true' ? 'Eligible' : 'Not Eligible';
+
+            document.getElementById('math-status').innerText = status;
+            document.getElementById('science-status').innerText = status;
+            // Set status for other subjects as needed
+        }
+
+        function downloadHallTicket() {
+            alert('Hall Ticket downloaded successfully!');
+        }
+
+        window.onload = loadEligibilityStatus;
+    </script>
+</body>
+</html>

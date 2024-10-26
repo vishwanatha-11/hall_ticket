@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Enrollment</title>
+    <link rel="stylesheet" href="/COE.css">
+</head>
+<body>
+    <div class="coe-container">
+        <header>
+            <h1>Certificate of Enrollment</h1>
+        </header>
+        <main>
+            <section class="coe-section">
+                <h2>Student Information</h2>
+                <p>Name: John Doe</p>
+                <p>Student ID: 123456</p>
+                <!-- Add more student information as needed -->
+            </section>
+            <section class="coe-section">
+                <h2>Program Details</h2>
+                <p>Program: Bachelor of Science in Computer Science</p>
+                <p>Year: 3rd Year</p>
+                <!-- Add more program details as needed -->
+            </section>
+            <section class="coe-section">
+                <h2>Status</h2>
+                <p>Status: Pending</p>
+                <!-- Add more status details as needed -->
+            </section>
+            <div class="button-container">
+                <button class="approve-button" onclick="handleApproval(true)">Approve</button>
+                <button class="not-approve-button" onclick="handleApproval(false)">Not Approve</button>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Certificate of Enrollment. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        function handleApproval(isApproved) {
+            window.location.href = "/hall_ticket.html?approved=" + isApproved;
+        }
+    </script>
+</body>
+</html>

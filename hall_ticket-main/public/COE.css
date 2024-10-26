@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #333;
+}
+
+.coe-container {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+header {
+    background: #6a11cb;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.coe-section {
+    margin-bottom: 30px;
+}
+
+.coe-section h2 {
+    margin-bottom: 20px;
+    color: #2575fc;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.approve-button,
+.not-approve-button {
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.approve-button {
+    background: #4caf50;
+    color: white;
+}
+
+.not-approve-button {
+    background: #f44336;
+    color: white;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

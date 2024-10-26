@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <div class="user-type">
+                <button onclick="showForm('student')">Student</button>
+                <button onclick="showForm('teacher')">Teacher</button>
+                <button onclick="showForm('COE')">COE</button>
+            </div>
+            <div id="COE" class="login-form">
+                <form action="/signin/COE" method="post">
+                    <div class="textbox">
+                        <input type="text" placeholder="COE ID" name="COE_id" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <input type="submit" class="btn" value="Login as COE">
+                </form>
+            </div>
+            <div id="student-form" class="login-form">
+                <form action="/signin/student" method="post">
+                    <div class="textbox">
+                        <input type="text" placeholder="Student ID" name="student_id" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <input type="submit" class="btn" value="Login as Student">
+                </form>
+            </div>
+            <div id="teacher-form" class="login-form">
+                <form action="/signin/teacher" method="post">
+                    <div class="textbox">
+                        <input type="text" placeholder="Teacher ID" name="teacher_id" required>
+                    </div>
+                    <div class="textbox">
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <input type="submit" class="btn" value="Login as Teacher">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showForm(userType) {
+            document.getElementById('student-form').style.display = 'none';
+            document.getElementById('teacher-form').style.display = 'none';
+            document.getElementById('COE').style.display = 'none';
+            if (userType === 'student') {
+                document.getElementById('student-form').style.display = 'block';
+            } else if (userType === 'teacher') {
+                document.getElementById('teacher-form').style.display = 'block';
+            } else if (userType === 'COE') {
+                document.getElementById('COE').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
